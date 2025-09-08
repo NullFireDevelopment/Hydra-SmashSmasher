@@ -1,12 +1,3 @@
-// ==UserScript==
-// @name         Capture SmashEducation Last Answer Status (Auto-Clear)
-// @namespace    http://tampermonkey.net/
-// @version      1.6
-// @description  Logs only the last 'status' field from /grades/partial/add responses and auto-clears console
-// @match        https://login.smasheducation.com/*
-// @grant        none
-// ==/UserScript==
-
 (function() {
     'use strict';
 
@@ -15,7 +6,7 @@
         if (answers && answers.length > 0) {
             const last = answers[answers.length - 1];
             console.clear(); // Clear the console every time
-            console.log("[Captured Status] Last Answer:", last.status);
+            console.log("Is answer correct?:", last.status);
         }
     }
 
